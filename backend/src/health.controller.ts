@@ -6,9 +6,8 @@ export class HealthController {
   @Get()
   getHealth(): HealthResponse {
     return healthResponseSchema.parse({
-      status: "OK",
+      status: "ok",
       service: "warehouse-backend",
-      timestamp: new Date().toISOString(),
     });
   }
 }

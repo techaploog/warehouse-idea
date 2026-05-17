@@ -11,7 +11,15 @@ export abstract class ServiceException extends HttpException {
     status: HttpStatus,
     options?: HttpExceptionOptions,
   ) {
-    super(message, status, options);
+    super(
+      {
+        statusCode: status,
+        code,
+        message,
+      },
+      status,
+      options,
+    );
     this.code = code;
   }
 }

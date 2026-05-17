@@ -1,1 +1,1 @@
-export * from "./item-search.swagger";
+export * from "./item.swagger";

@@ -9,16 +9,58 @@
       "request": {
         "method": "GET",
         "url": {
-          "raw": "{{baseUrl}}/api/health",
+          "raw": "{{baseUrl}}/api/v1/health",
           "host": ["{{baseUrl}}"],
-          "path": ["api", "health"]
+          "path": ["api", "v1", "health"]
         }
       }
     },
     {
-      "name": "Items",
+      "name": "Items Search",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"tote\",\n  \"page\": 1,\n  \"limit\": 20,\n  \"sortBy\": \"updatedAt\",\n  \"sortOrder\": \"desc\",\n  \"isActive\": true\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/items/search",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "items", "search"]
+        }
+      }
+    },
+    {
+      "name": "Items Get By SKU",
       "request": {
         "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/items/SKU-001",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "items", "SKU-001"]
+        }
+      }
+    },
+    {
+      "name": "Items Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sku\": \"SKU-001\",\n  \"barcode\": \"8850000000012\",\n  \"name\": \"Warehouse Tote\",\n  \"description\": \"Reusable storage tote\",\n  \"tags\": \"storage,tote\",\n  \"categoryId\": \"category1\",\n  \"brandId\": \"brand1\",\n  \"model\": \"TOTE-45\",\n  \"specification\": \"45L\",\n  \"unit\": \"PCS\",\n  \"unitPrice\": \"199.00\",\n  \"supplierId\": \"supplier1\",\n  \"orderLeadTime\": 7,\n  \"isActive\": true\n}"
+        },
         "url": {
           "raw": "{{baseUrl}}/api/v1/items",
           "host": ["{{baseUrl}}"],
