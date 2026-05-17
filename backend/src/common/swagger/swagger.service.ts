@@ -6,7 +6,7 @@ import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 export class WarehouseSwaggerService {
   setup(app: NestFastifyApplication) {
     const config = new DocumentBuilder()
-      .setTitle("Warehouse Idea API")
+      .setTitle("Warehouse Idea : API")
       .setDescription("Backend API documentation for Warehouse Idea.")
       .setVersion("1.0")
       .build();
