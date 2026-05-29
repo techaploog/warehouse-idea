@@ -7,7 +7,7 @@ import { ItemNotFoundException } from "@/modules/items/exceptions";
 import { Inject, Injectable } from "@nestjs/common";
 import { ItemResponse, itemResponseSchema } from "@warehouse/shared";
 import { eq } from "drizzle-orm";
-import { toItemResponse } from "./item-response.mapper";
+import { toItemResponse } from "../mapper/item-response.mapper";
 
 @Injectable()
 export class GetItemBySkuService extends AbstractService<string, ItemResponse> {

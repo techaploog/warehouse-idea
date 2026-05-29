@@ -1,0 +1,2 @@
+echo "[pre-commit] running pnpm build (shared + FE + BE + all tests)..."
+pnpm build

@@ -5,6 +5,7 @@ packages:
 allowBuilds:
   "@nestjs/core": true
   "@scarf/scarf": true
+  '@swc/core': true
   esbuild: true
   msw: true
   sharp: true

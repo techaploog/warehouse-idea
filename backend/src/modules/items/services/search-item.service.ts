@@ -7,7 +7,7 @@ import { Inject, Injectable } from "@nestjs/common";
 import { SearchItem, searchItemResponseSchema, SearchItemResponse } from "@warehouse/shared";
 import { and, asc, count, desc, eq, ilike, or, SQL } from "drizzle-orm";
 import { PgColumn } from "drizzle-orm/pg-core";
-import { toItemResponse } from "./item-response.mapper";
+import { toItemResponse } from "../mapper/item-response.mapper";
 
 @Injectable()
 export class SearchItemService extends AbstractService<SearchItem, SearchItemResponse> {

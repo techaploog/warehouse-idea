@@ -141,3 +141,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Release zips produced by `pnpm build:release`
+/release/
+/test-server/

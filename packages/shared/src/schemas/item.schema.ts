@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { paginationMetaSchema } from "./pagination.schema";
 
 const nullableStringSchema = z.string().nullable();
 const optionalNullableStringSchema = z.string().nullable().optional();
@@ -47,7 +48,13 @@ export const createItemSchema = z.object({
   isActive: z.boolean().optional().default(true),
 });
 
-export const searchItemSortBySchema = z.enum(["sku", "name", "unitPrice", "createdAt", "updatedAt"]);
+export const searchItemSortBySchema = z.enum([
+  "sku",
+  "name",
+  "unitPrice",
+  "createdAt",
+  "updatedAt",
+]);
 export const sortOrderSchema = z.enum(["asc", "desc"]);
 
 export const searchItemSchema = z.object({
@@ -61,13 +68,6 @@ export const searchItemSchema = z.object({
   supplierId: optionalNullableStringSchema,
   unit: optionalNullableStringSchema,
   isActive: z.boolean().optional(),
-});
-
-export const paginationMetaSchema = z.object({
-  count: z.number().int().min(0),
-  page: z.number().int().min(1),
-  limit: z.number().int().min(1),
-  totalPages: z.number().int().min(0),
 });
 
 export const itemResponseSchema = z.object({

@@ -6,7 +6,7 @@ import { itemMaster, TItemMasterInsert } from "@/database/schema";
 import { DuplicateItemException } from "@/modules/items/exceptions";
 import { Inject, Injectable } from "@nestjs/common";
 import { CreateItem, CreateItemResponse, createItemResponseSchema } from "@warehouse/shared";
-import { toItemResponse } from "./item-response.mapper";
+import { toItemResponse } from "../mapper/item-response.mapper";
 
 type PostgresError = Error & {
   code?: string;

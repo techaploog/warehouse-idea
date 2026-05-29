@@ -65,7 +65,7 @@ Available at http://localhost:3000.
 When working on frontend code, consult these skills before writing components:
 
 - `vercel-react-best-practices`
-- `web-design-guidelines`
+- `frontend-design`
 
 ### Conventions
 
